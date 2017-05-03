@@ -1,21 +1,15 @@
 import React, { Component } from 'react';
-import compose from 'recompose/compose';
-import setDisplayName from 'recompose/setDisplayName';
+import Post from './Post';
 
-const Container = (Inner) => {
-  return class extends Component {
-      render() {
-        return(
-          <Inner
-            title="From Parent"
-            begin='from the HOC'
-          />
-        )
-      }
-    }
-};
+class Container extends Component {
+  render() {
+    return (
+      <Post
+        // title="Containers title"
+        // content='content from Container'
+      />
+    );
+  }
+}
 
-export default compose(
-  setDisplayName('Container'),
-  Container
-);
+export default Container;
