@@ -1,7 +1,8 @@
 import React from 'react';
 import compose from 'recompose/compose';
 import defaultProps from 'recompose/defaultProps';
-import withProps from 'recompose/withProps';
+import setDisplayName from 'recompose/setDisplayName';
+import renameProp from 'recompose/renameProp';
 
 export const Post = ({ title, content, footer }) => {
   return(
@@ -14,13 +15,6 @@ export const Post = ({ title, content, footer }) => {
 };
 
 export default compose(
-  defaultProps({
-    title: 'I am the default prop',
-    content: 'content from default props',
-    footer: '-------------'
-  }),
-  // withProps({
-  //   title: 'I am from withProps',
-  //   content: 'content from withProps'
-  // })
+  setDisplayName('WrappedPost'),
+  // renameProp('title', 'footer')
 )(Post);
