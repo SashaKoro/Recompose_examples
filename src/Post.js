@@ -1,27 +1,29 @@
 import React from 'react';
 import compose from 'recompose/compose';
-import withHandlers from 'recompose/withHandlers';
-import withState from 'recompose/withState';
+import branch from 'recompose/branch';
 import withProps from 'recompose/withProps';
+import renderNothing from 'recompose/renderNothing';
 
-export const Post = ({ myFunction }) => {
+export const Post = ({ title, content }) => {
   return (
     <div>
-      <input type="checkbox" onClick={ myFunction } />
+      <h3>{title}</h3>
+      <div>{content}</div>
     </div>
   );
 };
 
+const hideComponent = (boolean) => {
+  return branch(
+    boolean,
+    renderNothing
+  );
+};
+
 export default compose(
-  withState('value', 'updateValue'),
-  withProps(({ updateValue }) => ({
-    myFunction: () => updateValue(n => {
-      console.log('action dispatched!!!!');
-    })
-  }))
-  // withHandlers({
-  //   myFunction: ({ updateValue }) => () => updateValue(e => {
-  //     console.log('action dispatched!');
-  //   })
-  // })
+  withProps({
+    title: 'I am from withProps',
+    content: 'content be here, read it all'
+  }),
+  hideComponent((props) => props.title),
 )(Post);
