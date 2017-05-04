@@ -1,26 +1,27 @@
 import React from 'react';
 import compose from 'recompose/compose';
-import defaultProps from 'recompose/defaultProps';
+import withHandlers from 'recompose/withHandlers';
+import withState from 'recompose/withState';
 import withProps from 'recompose/withProps';
 
-export const Post = ({ title, content, footer }) => {
-  return(
+export const Post = ({ myFunction }) => {
+  return (
     <div>
-      <h3>{title}</h3>
-      <div>{content}</div>
-      <div>{footer}</div>
+      <input type="checkbox" onClick={ myFunction } />
     </div>
   );
 };
 
 export default compose(
-  defaultProps({
-    title: 'I am the default prop',
-    content: 'content from default props',
-    footer: '-------------'
-  }),
-  // withProps({
-  //   title: 'I am from withProps',
-  //   content: 'content from withProps'
+  withState('value', 'updateValue'),
+  withProps(({ updateValue }) => ({
+    myFunction: () => updateValue(n => {
+      console.log('action dispatched!!!!');
+    })
+  }))
+  // withHandlers({
+  //   myFunction: ({ updateValue }) => () => updateValue(e => {
+  //     console.log('action dispatched!');
+  //   })
   // })
 )(Post);
