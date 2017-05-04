@@ -1,3 +1,4 @@
+/* eslint ignore */
 import React from 'react';
 import compose from 'recompose/compose';
 import withHandlers from 'recompose/withHandlers';
@@ -7,7 +8,7 @@ import withProps from 'recompose/withProps';
 export const Post = ({ myFunction }) => {
   return (
     <div>
-      <input type="checkbox" onClick={ myFunction } />
+      <input type="checkbox" onClick={ myFunction } value="theBox" />
     </div>
   );
 };
