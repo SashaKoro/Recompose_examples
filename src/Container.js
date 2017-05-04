@@ -5,8 +5,8 @@ class Container extends Component {
   render() {
     return (
       <Post
-        // title="Containers title"
-        // content='content from Container'
+        title="Containers title"
+        content='content from Container'
       />
     );
   }

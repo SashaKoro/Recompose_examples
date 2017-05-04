@@ -14,11 +14,11 @@ export const Post = ({ title, content, footer }) => {
 };
 
 export default compose(
-  defaultProps({
-    title: 'I am the default prop',
-    content: 'content from default props',
-    footer: '-------------'
-  }),
+  // defaultProps({
+  //   title: 'I am the default prop',
+  //   content: 'content from default props',
+  //   footer: '-------------'
+  // }),
   // withProps({
   //   title: 'I am from withProps',
   //   content: 'content from withProps'
