@@ -1,12 +1,12 @@
 import React from 'react';
 import compose from 'recompose/compose';
 import branch from 'recompose/branch';
-import withProps from 'recompose/withProps';
 import renderNothing from 'recompose/renderNothing';
 
-export const Post = ({ content }) => {
+export const Post = ({ title, content }) => {
   return (
     <div>
+      <div>{title}</div>
       <div>{content}</div>
     </div>
   );
@@ -20,9 +20,5 @@ const hideComponent = (boolean) => {
 };
 
 export default compose(
-  withProps({
-    toggle: true,
-    content: 'content be here, read it all'
-  }),
   hideComponent((props) => !props.toggle),
 )(Post);
