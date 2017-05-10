@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import React from 'react';
 import compose from 'recompose/compose';
 import setDisplayName from 'recompose/setDisplayName';
@@ -14,6 +16,6 @@ export const Post = ({ title, content, footer }) => {
 };
 
 export default compose(
-  // setDisplayName('WrappedPost'),
-  // renameProp('title', 'footer')
+  setDisplayName('WrappedPost'),
+  renameProp('title', 'footer')
 )(Post);
