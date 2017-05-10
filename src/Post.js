@@ -29,4 +29,4 @@ export default compose(
   //   content: 'content from withProps',
   //   myfunction: () => console.log('action fired')
   // })
-)(Post);
+)(Post);              // You can reuse the dumb component
