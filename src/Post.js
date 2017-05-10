@@ -5,24 +5,20 @@ import withHandlers from 'recompose/withHandlers';
 import withState from 'recompose/withState';
 import withProps from 'recompose/withProps';
 
-export const Post = ({ myFunction }) => {
+export const Post = ({ myFunction, status }) => {
   return (
     <div>
-      <input type="checkbox" onClick={ myFunction } value="theBox" />
+      <input type="button" onClick={ myFunction } value={ status } />
     </div>
   );
 };
 
 export default compose(
-  withState('value', 'updateValue'),
+  withState('status', 'updateValue', 'login'),
   withProps(({ updateValue }) => ({
-    myFunction: () => updateValue(n => {
-      console.log('action dispatched!!!!');
-    })
+    myFunction: () => updateValue(e => e === 'login' ? 'logout' : 'login')
   }))
   // withHandlers({
-  //   myFunction: ({ updateValue }) => () => updateValue(e => {
-  //     console.log('action dispatched!');
-  //   })
+  //   myFunction: ({ updateValue }) => () => updateValue(e => e === 'login' ? 'logout' : 'login')
   // })
 )(Post);
