@@ -2,11 +2,19 @@ import React, { Component } from 'react';
 import Post from './Post';
 
 class Container extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+      title: "Containers title",
+      content: "content from Container"
+    }
+  }
   render() {
     return (
       <Post
-        title="Containers title"
-        content='content from Container'
+        title={ this.state.title }
+        content={ this.state.content }
       />
     );
   }
