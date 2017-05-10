@@ -16,7 +16,7 @@ export const Post = ({ title, content }) => {
 const hideComponent = (boolean) => {
   return branch(
     boolean,
-    renderNothing
+    renderNothing            // if first argument true then render second argument
   );
 };
 
@@ -25,5 +25,5 @@ export default compose(
     title: 'I am from withProps',
     content: 'content be here, read it all'
   }),
-  hideComponent((props) => props.title),
+  hideComponent((props) => !props.title),
 )(Post);
