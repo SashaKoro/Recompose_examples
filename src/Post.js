@@ -16,6 +16,6 @@ export const Post = ({ title, content, footer }) => {
 };
 
 export default compose(
-  setDisplayName('WrappedPost'),
-  renameProp('title', 'footer')
+  // setDisplayName('WrappedPost'),
+  // renameProp('title', 'footer')
 )(Post);
