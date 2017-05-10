@@ -6,7 +6,7 @@ import renderNothing from 'recompose/renderNothing';
 export const Post = ({ title, content }) => {
   return (
     <div>
-      <div>{title}</div>
+      <h3>{title}</h3>
       <div>{content}</div>
     </div>
   );
