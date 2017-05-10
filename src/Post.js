@@ -4,10 +4,9 @@ import branch from 'recompose/branch';
 import withProps from 'recompose/withProps';
 import renderNothing from 'recompose/renderNothing';
 
-export const Post = ({ title, content }) => {
+export const Post = ({ content }) => {
   return (
     <div>
-      <h3>{title}</h3>
       <div>{content}</div>
     </div>
   );
@@ -22,8 +21,8 @@ const hideComponent = (boolean) => {
 
 export default compose(
   withProps({
-    title: 'I am from withProps',
+    toggle: true,
     content: 'content be here, read it all'
   }),
-  hideComponent((props) => !props.title),
+  hideComponent((props) => !props.toggle),
 )(Post);
