@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Post from './Post';
+import WrappedPost from './Post';
 
 class Container extends Component {
   constructor() {
@@ -12,7 +12,7 @@ class Container extends Component {
   }
   render() {
     return (
-      <Post
+      <WrappedPost
         title={ this.state.title }
         content={ this.state.content }
       />
