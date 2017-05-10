@@ -1,11 +1,10 @@
 import React from 'react';
 import compose from 'recompose/compose';
-import defaultProps from 'recompose/defaultProps';
 import setDisplayName from 'recompose/setDisplayName';
 import renameProp from 'recompose/renameProp';
 
 export const Post = ({ title, content, footer }) => {
-  return(
+  return (
     <div>
       <h3>{title}</h3>
       <div>{content}</div>
